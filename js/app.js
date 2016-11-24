@@ -26,7 +26,12 @@ app.controller('controller', function($scope){
 
         $scope.actionList.push(new $scope.action($scope.actionName));
         $scope.total = $scope.total + 1;
+        $scope.clearForm();
 
+    };
+
+    $scope.clearForm = function() {
+        $scope.actionName = "";
     };
 
     $scope.changeStatus = function(actionDone){
