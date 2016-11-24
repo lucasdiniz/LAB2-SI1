@@ -26,7 +26,6 @@ app.controller('controller', function($scope){
 
         $scope.actionList.push(new $scope.action($scope.actionName));
         $scope.total = $scope.total + 1;
-        console.log($scope.actionList[0].name);
 
     };
 
