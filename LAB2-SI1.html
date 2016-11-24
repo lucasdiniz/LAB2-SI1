@@ -17,7 +17,7 @@
 
     <body>
 
-        <h2> LAB2 </h2>
+        <h2> TODO List </h2>
 
         <input type = "button" onclick= "changeColor('yellow')" value = "Mudar cor" />
         <input type = "button" onclick= "changeColor('')" value = "Resetar mudanca" />
@@ -30,24 +30,23 @@
             <form ng-submit="update()">
 
                 Total de Atividades: {{total}} <br>
-                Atividades Feitas: {{cont}} <br>
+                Atividades Feitas: {{done}} <br>
 
                 <br>
 
                 <label>
-                    Atividade: <input type="text" ng-model="dummy" required />
+                    Atividade: <input type="text" ng-model="actionName" required />
                 </label>
 
                 <br>
 
                 <button type = "submit">Salvar</button> <br>
 
-                <label ng-repeat="f in actions">
-                    <input type = "checkbox" ng-click="go(f)" /> {{f}}
+                <label ng-repeat="f in actionList">
+                    <input type="checkbox" ng-click="changeStatus(f)"/> {{f.name}} <br>
                 </label>
 
             </form>
-
 
         </div>
 

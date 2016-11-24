@@ -6,24 +6,40 @@ var app = angular.module('myApp', []);
 
 app.controller('controller', function($scope){
 
-    $scope.cont = 0;
+    $scope.action = function(newName){
+        this.isDone = false;
+        this.name = newName;
+    }
+
     $scope.total = 0;
-    $scope.actions = [];
-    $scope.dummy = "";
+    $scope.done = 0;
+    $scope.actionList = [];
 
     $scope.update = function(){
-        $scope.actions.push($scope.dummy);
+
+        for(var i = 0 ; i < $scope.actionList.length ; i = i + 1){
+            if($scope.actionList[i].name === $scope.actionName){
+                alert("Atividade já cadastrada!");
+                return;
+            }
+        }
+
+        $scope.actionList.push(new $scope.action($scope.actionName));
         $scope.total = $scope.total + 1;
-        $scope.dummy = "";
+        console.log($scope.actionList[0].name);
 
     };
 
-    $scope.go = function(actionDone){
+    $scope.changeStatus = function(actionDone){
 
-        $scope.cont = $scope.cont + 1;
-        var index = $scope.actions.indexOf(actionDone);
-        $scope.actions.splice(index,1);
-        alert("Tarefa realizada!");
+        var index = $scope.actionList.indexOf(actionDone);
+
+        if($scope.actionList[index].isDone)
+            $scope.done = $scope.done - 1;
+        else
+            $scope.done = $scope.done + 1;
+
+        $scope.actionList[index].isDone = !$scope.actionList[index].isDone;
     };
 
 
