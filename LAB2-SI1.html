@@ -30,7 +30,7 @@
             <form ng-submit="update()">
 
                 Total de Atividades: {{total}} <br>
-                Atividades Feitas: {{done}} <br>
+                Atividades Feitas: {{calcDone()}} <br>
 
                 <br>
 
@@ -40,10 +40,11 @@
 
                 <br>
 
-                <button type = "submit">Salvar</button> <br>
+                <button type = "submit">Salvar</button>
+                <input type="button" ng-click="allDone()" value="Marcar todas como feitas "/> <br>
 
                 <label ng-repeat="f in actionList">
-                    <input type="checkbox" ng-click="changeStatus(f)"/> {{f.name}} <br>
+                    <input type="checkbox" ng-change="f.isDone" ng-model="f.isDone"/> {{f.name}} <br>
                 </label>
 
             </form>
