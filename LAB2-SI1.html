@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="windowClass">
 
     <title>LAB2-S1</title>
 
@@ -8,46 +8,62 @@
         <meta charset="UTF-8">
 
         <script src = "angular/angular.min.js" > </script>
-        <script src = "bootstrap/js/bootstrap.min.js" > </script>
-        <script src = "js/functions.js" > </script>
         <script src = "js/app.js" > </script>
         <link rel = "stylesheet" type = "text/css" href = "css/components.css" />
 
     </head>
 
-    <body>
+    <body class="windowClass">
 
-        <h2> TODO List </h2>
+        <div class="myAppClass" id="id1" ng-app="myApp" ng-controller="controller" ng-style="customStyle.style">
 
-        <input type = "button" onclick= "changeColor('yellow')" value = "Mudar cor" />
-        <input type = "button" onclick= "changeColor('')" value = "Resetar mudanca" />
+            <div id="id2">
+                <select ng-model="colorChoosen">
+                    <option value="" disabled selected>Escolha o estilo</option>
+                    <option value="blue">Azul</option>
+                    <option value="red">Vermelho</option>
+                    <option value="yellow">Amarelo</option>
+                    <option value="green">Verde</option>
+                </select>
+                <br>
+                <input class="buttonClass" type="submit" ng-click="changeStyle()" value="Mudar o estilo"/>
+            </div>
 
-        <br>
-        <br>
 
-        <div ng-app="myApp" ng-controller="controller">
+            <div id="id3">
 
-            <form ng-submit="update()">
-
-                Total de Atividades: {{total}} <br>
-                Atividades Feitas: {{calcDone()}} <br>
+                <h1> TODO List </h1>
 
                 <br>
 
-                <label>
-                    Atividade: <input type="text" ng-model="actionName" required />
-                </label>
+                <form>
 
-                <br>
+                    <p>Total de Atividades: {{total}}<p>
+                    <p>Atividades Feitas: {{calcDone()}}</p>
 
-                <button type = "submit">Salvar</button>
-                <input type="button" ng-click="allDone()" value="Marcar todas como feitas "/> <br>
 
-                <label ng-repeat="f in actionList">
-                    <input type="checkbox" ng-change="f.isDone" ng-model="f.isDone"/> {{f.name}} <br>
-                </label>
+                    <br>
+
+
+                    <input type="text" ng-model="actionName" placeholder="Nome da atividade" required />
+
+                    <input class="buttonClass" type="button" ng-click="update()" value ="Salvar"/>
+
+                    <input class="buttonClass" type="button" ng-click="allDone()" value="Marcar todas como feitas "/> <br>
+
+                <div id="id4">
+
+                    <label ng-repeat="f in actionList">
+                        <input type="checkbox" ng-model="f.isDone"> {{f.name}}
+                        <input class="buttonClassDelete" type="button" ng-click="deleteTask(f)" value="X">
+                        <br>
+                    </label>
+
+                </div>
 
             </form>
+
+            </div>
 
         </div>
 
