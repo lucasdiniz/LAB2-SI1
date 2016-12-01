@@ -66,19 +66,63 @@
 }
 
 #id4{
-    margin-left: 555px;
+    margin-left: 570px;
     margin-right: 555px;
     margin-top : 10px;
     margin-bottom : 10px;
     text-align: left;
     position: relative;
 }
-.buttonClassDelete{
-    margin-left: 300px;
+    /*.buttonClassDelete{*/
+        /*margin-left: 340px;*/
+        /*margin-right: 310px;*/
+        /*margin-bottom: 25px;*/
+        /*margin-top: 10px;*/
+        /*bottom: 25px;*/
+        /*text-align: center;*/
+        /*position: relative;*/
+        /*background-color: transparent;*/
+        /*border-color: transparent;*/
+        /*color: red;*/
+    /*}*/
+
+.buttonClassDelete {
+
+    margin-left: 340px;
     margin-right: 310px;
     margin-bottom: 25px;
     margin-top: 10px;
     bottom: 25px;
     text-align: center;
     position: relative;
+    border-color: transparent;
+    background-color: transparent;
+    color: red;
+}
+
+.buttonClassDelete:hover {
+
+    cursor: pointer;
+
+    /* Alinhamento */
+    margin-left: 340px;
+    margin-right: 310px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    bottom: 25px;
+    text-align: center;
+    position: relative;
+
+    /* Estilo */
+    background-color: #d90004;
+    width: 75px;  height: 20px;  color: #fff;
+    text-align: left;  font-size: 13px;
+
+
+    /* Bordas */
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    border-color: transparent;
+
 }

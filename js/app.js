@@ -19,7 +19,12 @@ app.controller('controller', function($scope){
 
 
     $scope.deleteTask = function(task){
+
+        if(!confirm("Tem certeza que deseja remover a atividade?"))
+            return;
+
         var index = $scope.actionList.indexOf(task);
+
         $scope.actionList.splice(index,1);
         $scope.total -= 1;
     };
@@ -65,6 +70,7 @@ app.controller('controller', function($scope){
         //what to do here?
         if($scope.colorChoosen === "blue") {
 
+            console.log("teste");
             $scope.customStyle.style = {"color": "lightBlue", "background-color": "blue", "font-family" : "American Typewriter"};
             $scope.changeButtonsStyle(" buttonClassBlue");
         }
@@ -85,7 +91,7 @@ app.controller('controller', function($scope){
 
         else if($scope.colorChoosen === "green"){
 
-            $scope.customStyle.style = {"font-family" : "Copperplate" , "backgroundColor" : "green", "color" : "black"};
+            $scope.customStyle.style = {"font-family" : "Arial" , "backgroundColor" : "green", "color" : "black"};
             $scope.changeButtonsStyle(" buttonClassGreen");
 
         }
