@@ -17,26 +17,13 @@
 
         <div class="myAppClass" id="id1" ng-app="myApp" ng-controller="controller" ng-style="customStyle.style">
 
-            <div id="id2">
-                <select ng-model="colorChoosen">
-                    <option value="" disabled selected>Escolha o estilo</option>
-                    <option value="blue">Azul</option>
-                    <option value="red">Vermelho</option>
-                    <option value="yellow">Amarelo</option>
-                    <option value="green">Verde</option>
-                </select>
-                <br>
-                <input class="buttonClass" type="submit" ng-click="changeStyle()" value="Mudar o estilo"/>
-            </div>
-
-
             <div id="id3">
 
                 <h1> TODO List </h1>
 
                 <br>
 
-                <form>
+                <form ng-submit="update()">
 
                     <p>Total de Atividades: {{total}}<p>
                     <p>Atividades Feitas: {{calcDone()}}</p>
@@ -45,23 +32,22 @@
                     <br>
 
 
-                    <input type="text" ng-model="actionName" placeholder="Nome da atividade" required />
+                    <input id="textBox" type="text" ng-model="actionName" placeholder="Nome da atividade" required />
 
                     <input class="buttonClass" type="button" ng-click="update()" value ="Salvar"/>
-
-                    <input class="buttonClass" type="button" ng-click="allDone()" value="Marcar todas como feitas "/> <br>
-
-                    <div id="id4">
-
-                        <label ng-repeat="f in actionList">
-                            <input type="checkbox" ng-model="f.isDone"> {{f.name}}
-                            <button ng-init="buttonDeleteText = 'X'" class="buttonClassDelete" ng-click="deleteTask(f)" ng-mouseover="buttonDeleteText = 'Remover?'" ng-mouseleave="buttonDeleteText = 'X'">{{buttonDeleteText}}</button>
-                        </label>
-
-                    </div>
-
+                    <input class="buttonClass" type="button" ng-click="allDone()" value="Marcar todas como feitas "/>
                 </form>
 
+                <br>
+
+                <div id="id4">
+
+                    <label ng-repeat="f in actionList">
+                        <input type="checkbox" ng-model="f.isDone"> {{f.name}}
+                        <button ng-init="buttonDeleteText = 'X'" class="buttonClassDelete" ng-click="deleteTask(f)" ng-mouseover="buttonDeleteText = 'Remover?'" ng-mouseleave="buttonDeleteText = 'X'">{{buttonDeleteText}}</button>
+                    </label>
+
+                </div>
             </div>
 
         </div>

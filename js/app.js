@@ -66,48 +66,4 @@ app.controller('controller', function($scope){
         return sumDone;
     };
 
-    $scope.changeStyle = function (){
-        //what to do here?
-        if($scope.colorChoosen === "blue") {
-
-            console.log("teste");
-            $scope.customStyle.style = {"color": "lightBlue", "background-color": "blue", "font-family" : "American Typewriter"};
-            $scope.changeButtonsStyle(" buttonClassBlue");
-        }
-
-        else if($scope.colorChoosen === "red"){
-
-            $scope.customStyle.style = "";
-            $scope.changeButtonsStyle(" buttonClass");
-
-        }
-
-        else if($scope.colorChoosen === "yellow"){
-
-            $scope.customStyle.style = {"font-family" : "Apple SD Gothic Neo" , "backgroundColor" : "lightYellow", "color" : "orange"};
-            $scope.changeButtonsStyle(" buttonClassYellow");
-        }
-
-
-        else if($scope.colorChoosen === "green"){
-
-            $scope.customStyle.style = {"font-family" : "Arial" , "backgroundColor" : "green", "color" : "black"};
-            $scope.changeButtonsStyle(" buttonClassGreen");
-
-        }
-
-
-    };
-
-    $scope.changeButtonsStyle = function (colorClass){
-        var wholePage = document.getElementById('id1');
-        var buttons = wholePage.getElementsByTagName("input");
-
-        for(var i = 0 ; i < buttons.length ; i++){
-            if(!buttons[i].classList.contains("buttonClassDelete"))
-                buttons[i].className = "colorClass";
-        }
-    };
-
-
 });

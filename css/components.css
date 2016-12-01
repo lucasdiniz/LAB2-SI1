@@ -6,23 +6,34 @@
     height: inherit;
     margin: 0;
     padding: 0;
-    background-color: pink;
+    background-color: whitesmoke;
 }
 
 .buttonClass {
-
-    font-family: Times;
-    color: black;
-    background-color: wheat;
-
+    background: #d9d9d9;
+    background-image: -webkit-linear-gradient(top, #d9d9d9, #acb6bd);
+    background-image: -moz-linear-gradient(top, #d9d9d9, #acb6bd);
+    background-image: -ms-linear-gradient(top, #d9d9d9, #acb6bd);
+    background-image: -o-linear-gradient(top, #d9d9d9, #acb6bd);
+    background-image: linear-gradient(to bottom, #d9d9d9, #acb6bd);
+    -webkit-border-radius: 60;
+    -moz-border-radius: 60;
+    border-radius: 60px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
 }
 
-.buttonClassBlue{
-    color : blue;
-    background-color: purple;
-    font-family: American Typewriter;
-    border: solid 1px #000;
-    border-radius: 5px;
+.buttonClass:hover{
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
 }
 
 .windowClass {
@@ -30,35 +41,10 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: inherit;
     text-align: center;
     vertical-align: baseline;
 }
 
-.buttonClassYellow {
-    font-family: Apple SD Gothic Neo;
-    position: relative;
-    background: yellow;
-    border-radius: 50% / 10%;
-    color: black;
-    text-align: center;
-    text-indent: .1em;
-}
-
-.buttonClassGreen {
-    background: lightgreen;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-}
-
-#id2 {
-    position:absolute;
-    top:20px;
-    left:0px;
-    text-align: center;
-    vertical-align: middle;
-}
 
 #id3{
     margin-left: auto;
@@ -66,7 +52,7 @@
 }
 
 #id4{
-    margin-left: 570px;
+    margin-left: 380px;
     margin-right: 555px;
     margin-top : 10px;
     margin-bottom : 10px;
@@ -74,9 +60,20 @@
     position: relative;
 }
 
+#textBox{
+
+    /* Tamanho */
+    width: 500px;
+    height: 35px;
+
+    /* Bordas */
+    border-radius: 10%;
+    border-color: transparent;
+}
+
 .buttonClassDelete {
 
-    margin-left: 340px;
+    margin-left: 490px;
     margin-right: 310px;
     margin-bottom: 25px;
     margin-top: 10px;
@@ -93,7 +90,7 @@
     cursor: pointer;
 
     /* Alinhamento */
-    margin-left: 340px;
+    margin-left: 490px;
     margin-right: 310px;
     margin-bottom: 25px;
     margin-top: 10px;
