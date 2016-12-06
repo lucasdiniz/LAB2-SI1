@@ -43,11 +43,26 @@
                 <div id="id4">
 
                     <label ng-repeat="f in actionList">
-                        <input type="checkbox" ng-model="f.isDone"> {{f.name}}
+                        <input type="checkbox" ng-model="f.isDone">
+
+                        <span ng-class="{strike: f.isDone}">
+                            {{f.name}}
+                        </span>
+
                         <button ng-init="buttonDeleteText = 'X'" class="buttonClassDelete" ng-click="deleteTask(f)" ng-mouseover="buttonDeleteText = 'Remover'" ng-mouseleave="buttonDeleteText = 'X'" >{{buttonDeleteText}}</button>
                     </label>
 
                 </div>
+            </div>
+
+            <div class="progress-bar blue stripes">
+                <span style="width: {{calcProgress()}}%">
+
+                    <div style="text-align: center">
+                        {{calcProgress()}}%
+                    </div>
+
+                </span>
             </div>
 
         </div>

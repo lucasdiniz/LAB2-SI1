@@ -14,7 +14,6 @@ app.controller('controller', function($scope){
 
     $scope.customStyle = {};
     $scope.total = 3;
-    $scope.done = 0;
     $scope.actionList = [new $scope.action("Varrer a casa"), new $scope.action("Lavar os pratos"), new $scope.action("Fazer a feira")];
 
     $scope.changeTaskText = function(task){
@@ -35,9 +34,9 @@ app.controller('controller', function($scope){
         $scope.total -= 1;
     };
 
-    $scope.alreadyExist = function(){
+    $scope.alreadyExist = function(nameToSearch){
         for(var i = 0 ; i < $scope.actionList.length ; i = i + 1){
-            if($scope.actionList[i].name === $scope.actionName){
+            if($scope.actionList[i].name === nameToSearch){
                 return true;
             }
         }
@@ -46,7 +45,7 @@ app.controller('controller', function($scope){
 
     $scope.update = function(){
 
-        if(alreadyExist($scope.actionName)){
+        if($scope.alreadyExist($scope.actionName)){
             alert("Atividade já cadastrada!");
             return;
         }
@@ -63,9 +62,6 @@ app.controller('controller', function($scope){
 
     $scope.allDone = function(){
         for(var i = 0 ; i < $scope.actionList.length ; i = i + 1) {
-            if (!$scope.actionList[i].isDone) {
-                $scope.done = $scope.done + 1;
-            }
             $scope.actionList[i].isDone = true;
         }
     };
@@ -78,5 +74,15 @@ app.controller('controller', function($scope){
         }
         return sumDone;
     };
+
+    $scope.calcProgress = function(){
+
+        if($scope.total == 0) return 0;
+
+        var percentageProgress = (parseFloat($scope.calcDone())/$scope.total) * 100.0;
+
+        return Math.floor(percentageProgress);
+    };
+
 
 });
