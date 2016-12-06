@@ -17,6 +17,12 @@ app.controller('controller', function($scope){
     $scope.done = 0;
     $scope.actionList = [new $scope.action("Varrer a casa"), new $scope.action("Lavar os pratos"), new $scope.action("Fazer a feira")];
 
+    $scope.changeTaskText = function(task){
+
+        task.name = task.name.strike();
+        console.log(task.name);
+    };
+
 
     $scope.deleteTask = function(task){
 
@@ -29,16 +35,23 @@ app.controller('controller', function($scope){
         $scope.total -= 1;
     };
 
-    $scope.update = function(){
-
+    $scope.alreadyExist = function(){
         for(var i = 0 ; i < $scope.actionList.length ; i = i + 1){
             if($scope.actionList[i].name === $scope.actionName){
-                alert("Atividade já cadastrada!");
-                return;
+                return true;
             }
         }
+        return false;
+    };
 
-            $scope.actionList.push(new $scope.action($scope.actionName));
+    $scope.update = function(){
+
+        if(alreadyExist($scope.actionName)){
+            alert("Atividade já cadastrada!");
+            return;
+        }
+
+        $scope.actionList.push(new $scope.action($scope.actionName));
         $scope.total = $scope.total + 1;
         $scope.clearForm();
 

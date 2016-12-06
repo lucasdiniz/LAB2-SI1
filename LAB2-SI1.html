@@ -44,7 +44,7 @@
 
                     <label ng-repeat="f in actionList">
                         <input type="checkbox" ng-model="f.isDone"> {{f.name}}
-                        <button ng-init="buttonDeleteText = 'X'" class="buttonClassDelete" ng-click="deleteTask(f)" ng-mouseover="buttonDeleteText = 'Remover?'" ng-mouseleave="buttonDeleteText = 'X'">{{buttonDeleteText}}</button>
+                        <button ng-init="buttonDeleteText = 'X'" class="buttonClassDelete" ng-click="deleteTask(f)" ng-mouseover="buttonDeleteText = 'Remover'" ng-mouseleave="buttonDeleteText = 'X'" >{{buttonDeleteText}}</button>
                     </label>
 
                 </div>

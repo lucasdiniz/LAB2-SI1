@@ -1,21 +1,18 @@
 .myAppClass {
 
     font-family: Verdana;
-    color: red;
+    color: #d02552;
     width: inherit;
     height: inherit;
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
+    background: #b2cecf;
+    background: -webkit-linear-gradient(to left, #b2cecf , lightcyan);
+    background: linear-gradient(to left, #b2cecf , lightcyan);
 }
 
 .buttonClass {
-    background: #d9d9d9;
-    background-image: -webkit-linear-gradient(top, #d9d9d9, #acb6bd);
-    background-image: -moz-linear-gradient(top, #d9d9d9, #acb6bd);
-    background-image: -ms-linear-gradient(top, #d9d9d9, #acb6bd);
-    background-image: -o-linear-gradient(top, #d9d9d9, #acb6bd);
-    background-image: linear-gradient(to bottom, #d9d9d9, #acb6bd);
+    background-color: #50d07d;
     -webkit-border-radius: 60;
     -moz-border-radius: 60;
     border-radius: 60px;
@@ -52,7 +49,7 @@
 }
 
 #id4{
-    margin-left: 380px;
+    margin-left: 330px;
     margin-right: 555px;
     margin-top : 10px;
     margin-bottom : 10px;
@@ -64,16 +61,24 @@
 
     /* Tamanho */
     width: 500px;
-    height: 35px;
+    height: 24px;
 
     /* Bordas */
-    border-radius: 10%;
-    border-color: transparent;
+    /*border-radius: 10%;*/
+    /*border-color: transparent;*/
+
+    padding: 10px;
+    border: transparent;
+    transition: border 0.3s;
+}
+
+#textBox.focus{
+    border: solid 5px #969696;
 }
 
 .buttonClassDelete {
 
-    margin-left: 490px;
+    margin-left: 755px;
     margin-right: 310px;
     margin-bottom: 25px;
     margin-top: 10px;
@@ -90,13 +95,14 @@
     cursor: pointer;
 
     /* Alinhamento */
-    margin-left: 490px;
+    margin-left: 755px;
     margin-right: 310px;
-    margin-bottom: 25px;
+    margin-bottom: 27px;
     margin-top: 10px;
     bottom: 25px;
     text-align: center;
     position: relative;
+    padding: 0px 5px 5px 8px;
 
     /* Estilo */
     background-color: #d90004;
